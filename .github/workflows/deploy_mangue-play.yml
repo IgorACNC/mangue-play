@@ -30,6 +30,13 @@ jobs:
       - name: Install dependencies
         run: pip install -r manguePlay/requirements.txt
 
+      - name: Run local server
+        run: |
+            python manage.py migrate
+            python manage.py runserver &
+            sleep 5
+            npx cypress run
+            
       - name: Cleaning testing files
         run: |
           cd manguePlay/
