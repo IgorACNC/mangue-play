@@ -1,138 +1,165 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Fornecedores</title>
+    <title>Fornecedores</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
             background-color: #f4f4f4;
+            margin: 0;
+            padding: 0; /* Remove padding extra */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         h1 {
             color: #333;
-            text-align: center;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
             margin: 20px 0;
-            background-color: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
         }
 
-        table, th, td {
-            border: 1px solid #444;
+        .supplier-list {
+            width: 100%;
+            max-width: 600px;
         }
 
-        th, td {
-            padding: 10px;
-            text-align: left;
-            word-wrap: break-word;
-        }
-
-        th {
-            background-color: #2c6e2c;
+        .supplier-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #54e079;
             color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        tbody tr:nth-child(odd) {
-            background-color: #f9f9f9;
+        .supplier-card:hover {
+            background-color: #51cf72;
         }
 
-        tbody tr:nth-child(even) {
-            background-color: #e9e9e9;
-        }
-
-        tbody tr:hover {
-            background-color: #ddd;
-        }
-
-        .back-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background-color: rgb(6, 49, 6);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
+        .supplier-card span {
             font-size: 16px;
-            transition: background-color 0.3s;
+            font-weight: bold;
         }
 
-        .back-button:hover {
-            background-color: rgb(4, 30, 4);
+        .supplier-card .actions {
+            display: flex;
+            gap: 10px;
         }
 
-        /* Estilos para os botões Editar e Excluir */
-        .action-buttons a {
-            padding: 8px 12px;
-            border-radius: 4px;
-            color: white;
+        .actions a {
             text-decoration: none;
-            font-size: 14px;
+            color: white;
+            font-size: 18px;
+        }
+
+        .add-button {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background-color: #54e079;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s;
+            position: absolute;
+            top: 160px; /* Posiciona abaixo da navbar */
+            right: 60px;
+            z-index: 1000;
         }
 
-        .action-buttons a.edit {
-            background-color: #2c6e2c;
-            margin-right: 5px;
+        .add-button:hover {
+            background-color: #51cf72;
         }
 
-        .action-buttons a.edit:hover {
-            background-color: #1e4a1e;
+        .no-suppliers {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
         }
 
-        .action-buttons a.delete {
-            background-color: #c92424;
+        .navbar {
+            width: 100%; /* Ocupa toda a largura da tela */
+            background-color: #eba3ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0; /* Espaçamento vertical */
+            position: relative; /* Mantém posição relativa ao fluxo */
         }
 
-        .action-buttons a.delete:hover {
-            background-color: #a91d1d;
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar .nav-links li {
+            display: inline;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 1rem;
+            transition: color 0.3s;
+            line-height: 1.5;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #00bcd4;
+        }
+
+        img.nome_logo {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <a href="{% url 'admin_dashboard' %}" class="back-button">Voltar</a>
-    <h1>Fornecedores Cadastrados</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Contato</th>
-                <th>Frequência</th>
-                <th>Endereço</th>
-                <th>Email</th>
-                <th>Data de Registro</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for fornecedor in fornecedores %}
-            <tr>
-                <td>{{ fornecedor.nome }}</td>
-                <td>{{ fornecedor.contato_numero }}</td>
-                <td>{{ fornecedor.frequencia_de_entrega }}</td>
-                <td>{{ fornecedor.endereco }}</td>
-                <td>{{ fornecedor.email }}</td>
-                <td>{{ fornecedor.data_registro }}</td>
-                <td class="action-buttons">
-                    <a href="{% url 'editar_fornecedor' fornecedor.pk %}" class="edit">Editar</a>
-                    <a href="{% url 'excluir_fornecedor' fornecedor.pk %}" class="delete">Excluir</a>
-                </td>
-            </tr>
-            {% empty %}
-            <tr>
-                <td colspan="7">Nenhum fornecedor encontrado.</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>   
+    <div>
+        <img src="{% static 'usuarios/img/ManguePlayNome png.png' %}" class="nome_logo" width="300px">
+    </div>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="{% url 'admin_dashboard' %}">Home</a></li>
+            <li><a href="{% url 'visualizar_brinquedos_admin' %}">Produtos</a></li>
+            <li><a href="{% url 'adicionar_brinquedo' %}">Adicionar Brinquedo</a></li>
+            <li><a href="{% url 'depoimentos_admin' %}">Depoimentos</a></li>
+            <li><a href="{% url 'listar_fornecedores' %}">Fornecedor</a></li>
+            <li><a href="{% url 'visualizar_local' %}">Doação e Coleta de Materiais</a></li>
+            <li><a href="{% url 'listar_encomendas' %}">Visualizar encomendas</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    </nav>
+    <h1>FORNECEDORES</h1>
+    <div class="supplier-list">
+        {% for fornecedor in fornecedores %}
+        <div class="supplier-card">
+            <span>{{ fornecedor.nome }}</span>
+            <div class="actions">
+                <a href="{% url 'editar_fornecedor' fornecedor.pk %}">📄</a>
+                <a href="{% url 'excluir_fornecedor' fornecedor.pk %}" onclick="return confirm('Deseja realmente excluir este fornecedor?')">🗑️</a>
+            </div>
+        </div>
+        {% empty %}
+        <p class="no-suppliers">Nenhum fornecedor encontrado.</p>
+        {% endfor %}
+    </div>
+    <a href="{% url 'adicionar_fornecedor' %}" class="add-button">+</a>
 </body>
 </html>
