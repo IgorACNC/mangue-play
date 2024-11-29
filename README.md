@@ -9,7 +9,8 @@
 - Link Azure: https://mangue-play-hbaah3ckh8hnbng8.brazilsouth-01.azurewebsites.net/
 
 # Diagrama de Atividades do Sistema:
-![image](https://github.com/user-attachments/assets/8096557a-36f8-42dc-a27b-2bce2ce5c27d)
+![image](https://github.com/user-attachments/assets/5cec4686-ce5e-4bd2-a95a-76f674638f80)
+
 
 # Principais Funcionalidade
 
@@ -60,7 +61,7 @@
 # Sceencast:
 - Assista nosso vídeo demonstrando como funciona o Mangue Play:
   
-  https://drive.google.com/file/d/1-Yo6mLjoPUVCgezJSOYZqWvbRa9ZcVms/view?usp=sharing
+  https://drive.google.com/file/d/1-M1ynJfzXZ6tWku6LjUSJSFrbXwHmoaz
 
 - Screencast CI/CD:
   
@@ -72,6 +73,8 @@
 
   
 # Issue
-![image](https://github.com/user-attachments/assets/b12990b2-84db-49ec-b030-fbf2b37be3a2)
+![Imagem do WhatsApp de 2024-11-28 à(s) 23 10 27_5287fca8](https://github.com/user-attachments/assets/3513a96d-b84d-4eb6-89cb-43ceb4d59da9)
+
+![Imagem do WhatsApp de 2024-11-28 à(s) 23 10 28_93729961](https://github.com/user-attachments/assets/8b21b5fc-c4d1-4517-b1c3-525517b08f95)
 
 
