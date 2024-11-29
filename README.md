@@ -9,7 +9,8 @@
 - Link Azure: https://mangue-play-hbaah3ckh8hnbng8.brazilsouth-01.azurewebsites.net/
 
 # Diagrama de Atividades do Sistema:
-![image](https://github.com/user-attachments/assets/8096557a-36f8-42dc-a27b-2bce2ce5c27d)
+![image](https://github.com/user-attachments/assets/5cec4686-ce5e-4bd2-a95a-76f674638f80)
+
 
 # Principais Funcionalidade
 
