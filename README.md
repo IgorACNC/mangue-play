@@ -62,6 +62,15 @@
   
   https://drive.google.com/file/d/1-Yo6mLjoPUVCgezJSOYZqWvbRa9ZcVms/view?usp=sharing
 
+- Screencast CI/CD:
+  
+    https://drive.google.com/drive/folders/1-myoltRl4D8_tkgKTILxbfIciKOHcjh_
+
+- Screencast testes:
+
+  https://drive.google.com/drive/folders/1-q1NyY_Iz0jfr1xro3t1Dqd77-IQG6sw
+
+  
 # Issue
 ![image](https://github.com/user-attachments/assets/b12990b2-84db-49ec-b030-fbf2b37be3a2)
 
