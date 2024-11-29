@@ -60,7 +60,7 @@
 # Sceencast:
 - Assista nosso vídeo demonstrando como funciona o Mangue Play:
   
-  https://drive.google.com/file/d/1-Yo6mLjoPUVCgezJSOYZqWvbRa9ZcVms/view?usp=sharing
+  https://drive.google.com/file/d/1-M1ynJfzXZ6tWku6LjUSJSFrbXwHmoaz
 
 - Screencast CI/CD:
   
