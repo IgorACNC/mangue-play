@@ -72,6 +72,8 @@
 
   
 # Issue
-![image](https://github.com/user-attachments/assets/b12990b2-84db-49ec-b030-fbf2b37be3a2)
+![Imagem do WhatsApp de 2024-11-28 à(s) 23 10 27_5287fca8](https://github.com/user-attachments/assets/3513a96d-b84d-4eb6-89cb-43ceb4d59da9)
+
+![Imagem do WhatsApp de 2024-11-28 à(s) 23 10 28_93729961](https://github.com/user-attachments/assets/8b21b5fc-c4d1-4517-b1c3-525517b08f95)
 
 
